@@ -1,0 +1,15 @@
+# PiSD2IEC - Raspberry Pi Zero 2 W, bare metal, 64-bit
+
+arm_64bit=1
+kernel=kernel8.img
+kernel_address=0x80000
+
+# PL011 UART on GPIO 14/15 (Bluetooth off). PiSD2IEC sets the UART clock to
+# 48 MHz itself through the mailbox; this line is a fallback.
+enable_uart=1
+dtoverlay=disable-bt
+init_uart_clock=48000000
+
+# Fast boot
+disable_splash=1
+boot_delay=0
